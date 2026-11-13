@@ -16,6 +16,7 @@ from app.routers.users import router as users_router
 from app.routers.sessions_settings import router as sessions_router, settings_router
 from app.routers.notices_calendar_timetable import notices_router, calendar_router, timetable_router
 from app.routers.promotion_reports_misc import promotion_router, reports_router, activity_router, backup_router, whatsapp_router
+from app.routers.dashboard import router as dashboard_router
 
 app = FastAPI(title=settings.app_name, debug=settings.app_debug)
 
@@ -52,6 +53,7 @@ app.include_router(reports_router)
 app.include_router(activity_router)
 app.include_router(backup_router)
 app.include_router(whatsapp_router)
+app.include_router(dashboard_router)
 
 
 @app.get("/api/health")
